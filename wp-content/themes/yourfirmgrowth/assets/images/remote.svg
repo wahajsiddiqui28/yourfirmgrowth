@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" role="img" aria-label="Dedicated remote team">
+  <defs>
+    <linearGradient id="gr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#052f57"/>
+      <stop offset="1" stop-color="#04707d"/>
+    </linearGradient>
+  </defs>
+  <circle cx="280" cy="220" r="180" fill="#eef6f8"/>
+  <!-- center person -->
+  <g>
+    <circle cx="280" cy="180" r="42" fill="url(#gr)"/>
+    <path d="M210 300 a70 70 0 0 1 140 0 Z" fill="url(#gr)"/>
+  </g>
+  <!-- orbiting members -->
+  <g fill="#04707d">
+    <circle cx="110" cy="150" r="26"/><path d="M76 210 a34 34 0 0 1 68 0Z"/>
+  </g>
+  <g fill="#052f57">
+    <circle cx="450" cy="150" r="26"/><path d="M416 210 a34 34 0 0 1 68 0Z"/>
+  </g>
+  <g fill="#0aa3b0">
+    <circle cx="150" cy="330" r="24"/><path d="M120 384 a30 30 0 0 1 60 0Z"/>
+  </g>
+  <g fill="#0aa3b0">
+    <circle cx="410" cy="330" r="24"/><path d="M380 384 a30 30 0 0 1 60 0Z"/>
+  </g>
+  <!-- connection lines -->
+  <g stroke="#04707d" stroke-width="3" stroke-dasharray="6 8" opacity=".6" fill="none">
+    <path d="M280 200 L120 165"/><path d="M280 200 L440 165"/>
+    <path d="M280 230 L160 320"/><path d="M280 230 L400 320"/>
+  </g>
+</svg>
