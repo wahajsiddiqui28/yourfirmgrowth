@@ -13,8 +13,8 @@ $yfg_contact_url = home_url( '/contact/?service=WebDev' );
 <style>
     /* Premium Page-Specific Styles */
     .yfg-landing-hero {
-        padding: 7rem 0 6rem;
-        background: linear-gradient(135deg, #03182e 0%, #052f57 50%, #04505c 100%);
+        padding: 8rem 0 7rem;
+        background: linear-gradient(135deg, rgba(3, 24, 46, 0.94) 0%, rgba(5, 47, 87, 0.9) 50%, rgba(4, 80, 92, 0.82) 100%), url(<?php echo esc_url( YFG_URI . '/assets/images/web-design-development-services/web-design-development-services-banner.webp' ); ?>) center / cover no-repeat;
         color: #ffffff;
         position: relative;
         overflow: hidden;
@@ -163,6 +163,50 @@ $yfg_contact_url = home_url( '/contact/?service=WebDev' );
         font-weight: 900;
         font-size: 1.1rem;
     }
+    /* Image Frame */
+    .yfg-img-frame {
+        position: relative;
+        display: inline-block;
+        padding: 12px;
+        background: #ffffff;
+        border: 1px solid #d9e8eb;
+        border-radius: 24px;
+        box-shadow: 0 15px 35px rgba(5, 47, 87, 0.05);
+        transition: all 0.4s ease;
+        z-index: 1;
+        width: 100%;
+    }
+    .yfg-img-frame:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 50px rgba(5, 47, 87, 0.1);
+        border-color: rgba(4, 112, 125, 0.3);
+    }
+    .yfg-img-frame img {
+        border-radius: 16px;
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+    .yfg-img-frame:hover img {
+        transform: scale(1.02);
+    }
+    .yfg-deco-dots {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        background-image: radial-gradient(var(--yfg-teal) 1.5px, transparent 1.5px);
+        background-size: 12px 12px;
+        opacity: 0.15;
+        z-index: 0;
+    }
+    .yfg-deco-dots--top-left {
+        top: -15px;
+        left: -15px;
+    }
+    .yfg-deco-dots--bottom-right {
+        bottom: -15px;
+        right: -15px;
+    }
     /* Process Cards */
     .yfg-process-card {
         background: #ffffff;
@@ -197,24 +241,6 @@ $yfg_contact_url = home_url( '/contact/?service=WebDev' );
         color: #5b6b7d;
         line-height: 1.5;
         margin-bottom: 0;
-    }
-    /* CTA Block */
-    .yfg-action-banner {
-        background: var(--yfg-grad);
-        color: #ffffff;
-        border-radius: 24px;
-        padding: 3.5rem;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 15px 40px rgba(4, 112, 125, 0.2);
-    }
-    .yfg-action-banner h2 {
-        color: #ffffff !important;
-        font-weight: 800;
-    }
-    .yfg-action-banner p {
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 700px;
     }
 </style>
 
@@ -252,15 +278,13 @@ $yfg_contact_url = home_url( '/contact/?service=WebDev' );
                 <p class="text-muted mb-4">Too many sites look good but load slowly, rank poorly, and convert badly, because design and development were treated as separate jobs. Your Firm Growth pairs designers and developers in one team, so your site is engineered to perform from the first wireframe. Every site we build is responsive, SEO-ready, and conversion-optimized by default.</p>
                 <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-outline-brand">Book a Discovery Call &rarr;</a>
             </div>
-            <div class="col-lg-6">
-                <div class="yfg-compliance-card p-4" style="border: 1px solid #d2ebee; background: linear-gradient(135deg, var(--yfg-soft) 0%, #ffffff 100%); border-radius: 20px;">
-                    <h3 class="h5 fw-bold mb-3" style="color:var(--yfg-navy);"><i class="bi bi-laptop-fill me-2 text-teal"></i> The YFG Web Engineering Standard</h3>
-                    <ul class="yfg-list">
-                        <li><strong>Design &amp; CRO Synergy:</strong> Visually stunning builds optimized for conversion.</li>
-                        <li><strong>Core Web Vitals Ready:</strong> Speed and performance optimization baked in.</li>
-                        <li><strong>Mobile-First Architecture:</strong> Fluid, responsive grids for every viewport.</li>
-                        <li><strong>SEO-Friendly Markup:</strong> Semantic HTML structures and schema integrations.</li>
-                    </ul>
+            <div class="col-lg-6 text-center">
+                <div class="position-relative d-inline-block">
+                    <div class="yfg-deco-dots yfg-deco-dots--top-left"></div>
+                    <div class="yfg-deco-dots yfg-deco-dots--bottom-right"></div>
+                    <div class="yfg-img-frame">
+                        <img src="<?php echo esc_url( YFG_URI . '/assets/images/web-design-development-services/web-design-development-services-image-1.webp' ); ?>" alt="Web Design and Development">
+                    </div>
                 </div>
             </div>
         </div>
@@ -378,9 +402,9 @@ $yfg_contact_url = home_url( '/contact/?service=WebDev' );
 <!-- ============ SECTION 3: AUDIENCE & DIFFERENTIATORS ============ -->
 <section class="yfg-section">
     <div class="container">
-        <div class="row g-5">
-            <!-- Left: Who it is for -->
-            <div class="col-lg-6">
+        <!-- Row 1: Who Our Web Design & Dev Services Are For -->
+        <div class="row align-items-center g-5 mb-5 pb-4">
+            <div class="col-lg-7">
                 <span class="yfg-accent yfg-accent--start"></span>
                 <h2 class="yfg-section-title mb-4">Who Our Web Design and Development Services Are For</h2>
                 <ul class="yfg-list">
@@ -391,8 +415,31 @@ $yfg_contact_url = home_url( '/contact/?service=WebDev' );
                     <li><strong>International Organizations:</strong> Need multi-region, multilingual websites across worldwide markets.</li>
                 </ul>
             </div>
-            <!-- Right: Differentiators -->
-            <div class="col-lg-6">
+            <div class="col-lg-5 text-center">
+                <div class="position-relative d-inline-block">
+                    <div class="yfg-deco-dots yfg-deco-dots--top-left"></div>
+                    <div class="yfg-deco-dots yfg-deco-dots--bottom-right"></div>
+                    <div class="yfg-img-frame">
+                        <img src="<?php echo esc_url( YFG_URI . '/assets/images/web-design-development-services/web-design-development-services-image-2.webp' ); ?>" alt="Web Design Target Audience">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Why Businesses Choose YFG for Web -->
+        <div class="row align-items-center g-5 pt-4">
+            <div class="col-lg-5 text-center order-lg-1 order-2">
+                <div class="yfg-compliance-card p-4 text-start" style="border: 1px solid #d2ebee; background: linear-gradient(135deg, var(--yfg-soft) 0%, #ffffff 100%); border-radius: 20px;">
+                    <h3 class="h5 fw-bold mb-3" style="color:var(--yfg-navy);"><i class="bi bi-shield-fill-check me-2 text-teal"></i> GDPR &amp; Speed Optimized</h3>
+                    <p class="text-muted small">Every website we build complies with the latest cookie consent policies, data encryption practices, and GDPR guidelines, ensuring safe transactions globally.</p>
+                    <ul class="yfg-list mb-0">
+                        <li class="small">Core Web Vitals optimized (Grade A speed)</li>
+                        <li class="small">Fully responsive design layout</li>
+                        <li class="small">Custom integrations &amp; CMS setups</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-7 order-lg-2 order-1">
                 <span class="yfg-accent yfg-accent--start"></span>
                 <h2 class="yfg-section-title mb-4">Why Businesses Choose YFG for Web</h2>
                 <ul class="yfg-list">
@@ -404,7 +451,8 @@ $yfg_contact_url = home_url( '/contact/?service=WebDev' );
                 </ul>
             </div>
         </div>
-        <div class="text-center mt-5">
+
+        <div class="text-center mt-5 pt-3">
             <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-brand btn-lg">Request Your Proposal &rarr;</a>
         </div>
     </div>
@@ -444,10 +492,23 @@ $yfg_contact_url = home_url( '/contact/?service=WebDev' );
 <!-- ============ SECTION 5: CUSTOM & AFFORDABLE ============ -->
 <section class="yfg-section">
     <div class="container">
-        <div class="yfg-action-banner text-center text-white">
-            <h2 class="h1 mb-3">Custom, Affordable &amp; Professional Web Design and Development</h2>
-            <p class="mx-auto mb-4">Whether you need a custom flagship site or affordable web design and development services to launch quickly, YFG scales the build to your budget without cutting corners on performance or quality. Our professional web design and development services give you a partner for the long term, not a one-off project that's abandoned at launch.</p>
-            <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-light btn-lg fw-semibold">Get a Custom Website Quote &rarr;</a>
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <span class="yfg-accent yfg-accent--start"></span>
+                <h2 class="yfg-section-title mb-3">Custom, Affordable &amp; Professional Web Design and Development</h2>
+                <p class="lead text-muted mb-4" style="font-size: 1.1rem; line-height: 1.6;">Whether you need a custom flagship site or affordable web design and development services to launch quickly, YFG scales the build to your budget without cutting corners on performance or quality.</p>
+                <p class="text-muted mb-4">Our professional web design and development services give you a partner for the long term, not a one-off project that's abandoned at launch. We provide post-launch care, hosting configuration, speed audits, and content updates so your website continues to grow alongside your business pipeline.</p>
+                <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-brand btn-lg">Get a Custom Website Quote &rarr;</a>
+            </div>
+            <div class="col-lg-5 text-center">
+                <div class="position-relative d-inline-block">
+                    <div class="yfg-deco-dots yfg-deco-dots--top-left"></div>
+                    <div class="yfg-deco-dots yfg-deco-dots--bottom-right"></div>
+                    <div class="yfg-img-frame">
+                        <img src="<?php echo esc_url( YFG_URI . '/assets/images/web-design-development-services/web-design-development-services-image-3.webp' ); ?>" alt="Custom Website Design">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -493,10 +554,12 @@ $yfg_contact_url = home_url( '/contact/?service=WebDev' );
 <!-- ============ SECTION 7: FINAL CTA ============ -->
 <section class="yfg-section text-center">
     <div class="container">
-        <h2 class="yfg-section-title mb-3">Ready for a Website That Works as Hard as You Do?</h2>
-        <p class="text-muted mx-auto mb-4" style="max-width:700px;">Partner with YFG for web design and development services that look great and convert. Tell us about your project and get a free, no-obligation quote.</p>
-        <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-brand btn-lg">Get Your Free Website Quote &rarr;</a>
-        <p class="mt-3 text-muted">Or visit <a class="text-teal font-semibold" href="<?php echo esc_url( home_url( '/' ) ); ?>">yourfirmgrowth.com</a> to request your quote.</p>
+        <div class="yfg-action-banner text-center text-white" style="background: linear-gradient(135deg, #03182e 0%, #052f57 50%, #04505c 100%); border-radius: 24px; padding: 4rem 2rem; box-shadow: 0 15px 40px rgba(3, 24, 46, 0.15);">
+            <h2 class="h1 mb-3 text-white" style="font-weight: 800; color: #ffffff !important;">Ready for a Website That Works as Hard as You Do?</h2>
+            <p class="mx-auto mb-4" style="max-width:700px; color: rgba(255, 255, 255, 0.9); font-size: 1.05rem;">Partner with YFG for web design and development services that look great and convert. Tell us about your project and get a free, no-obligation quote.</p>
+            <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-light btn-lg fw-semibold px-4 py-3" style="border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);">Get Your Free Website Quote &rarr;</a>
+            <p class="mt-4 mb-0" style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Or visit <a class="text-white fw-semibold" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="text-decoration: underline;">yourfirmgrowth.com</a> to request your quote.</p>
+        </div>
     </div>
 </section>
 

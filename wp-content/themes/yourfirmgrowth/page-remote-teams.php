@@ -13,8 +13,8 @@ $yfg_contact_url = home_url( '/contact/?service=RemoteTeams' );
 <style>
     /* Premium Page-Specific Styles */
     .yfg-landing-hero {
-        padding: 7rem 0 6rem;
-        background: linear-gradient(135deg, #03182e 0%, #052f57 50%, #04505c 100%);
+        padding: 8rem 0 7rem;
+        background: linear-gradient(135deg, rgba(3, 24, 46, 0.94) 0%, rgba(5, 47, 87, 0.9) 50%, rgba(4, 80, 92, 0.82) 100%), url(<?php echo esc_url( YFG_URI . '/assets/images/dedicated-remote-teams/dedicated-remote-teams-banner.webp' ); ?>) center / cover no-repeat;
         color: #ffffff;
         position: relative;
         overflow: hidden;
@@ -140,6 +140,50 @@ $yfg_contact_url = home_url( '/contact/?service=RemoteTeams' );
         font-weight: 900;
         font-size: 1.1rem;
     }
+    /* Image Frame */
+    .yfg-img-frame {
+        position: relative;
+        display: inline-block;
+        padding: 12px;
+        background: #ffffff;
+        border: 1px solid #d9e8eb;
+        border-radius: 24px;
+        box-shadow: 0 15px 35px rgba(5, 47, 87, 0.05);
+        transition: all 0.4s ease;
+        z-index: 1;
+        width: 100%;
+    }
+    .yfg-img-frame:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 50px rgba(5, 47, 87, 0.1);
+        border-color: rgba(4, 112, 125, 0.3);
+    }
+    .yfg-img-frame img {
+        border-radius: 16px;
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+    .yfg-img-frame:hover img {
+        transform: scale(1.02);
+    }
+    .yfg-deco-dots {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        background-image: radial-gradient(var(--yfg-teal) 1.5px, transparent 1.5px);
+        background-size: 12px 12px;
+        opacity: 0.15;
+        z-index: 0;
+    }
+    .yfg-deco-dots--top-left {
+        top: -15px;
+        left: -15px;
+    }
+    .yfg-deco-dots--bottom-right {
+        bottom: -15px;
+        right: -15px;
+    }
     /* Process Cards */
     .yfg-process-card {
         background: #ffffff;
@@ -211,15 +255,13 @@ $yfg_contact_url = home_url( '/contact/?service=RemoteTeams' );
                 <p class="text-muted mb-4">Our professionals integrate directly into your tools (Slack, Jira, Teams) and workflow, attending your standups and participating in real-time. You get seamless collaboration during your working day, with a team that feels like your own, wherever you're based.</p>
                 <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-outline-brand">Book a Strategy Call &rarr;</a>
             </div>
-            <div class="col-lg-6">
-                <div class="yfg-compliance-card p-4" style="border: 1px solid #d2ebee; background: linear-gradient(135deg, var(--yfg-soft) 0%, #ffffff 100%); border-radius: 20px;">
-                    <h3 class="h5 fw-bold mb-3" style="color:var(--yfg-navy);"><i class="bi bi-people-fill me-2 text-teal"></i> Direct Talent Integration</h3>
-                    <ul class="yfg-list">
-                        <li><strong>No Recruiting Overhead:</strong> Skip the hiring cycles and agency fees.</li>
-                        <li><strong>Instant Onboarding:</strong> Access skilled experts ready to deliver.</li>
-                        <li><strong>Time-Zone Aligned:</strong> Overlapping hours for real-time collaboration.</li>
-                        <li><strong>Scalable Capacity:</strong> Easily scale the team up or down.</li>
-                    </ul>
+            <div class="col-lg-6 text-center">
+                <div class="position-relative d-inline-block">
+                    <div class="yfg-deco-dots yfg-deco-dots--top-left"></div>
+                    <div class="yfg-deco-dots yfg-deco-dots--bottom-right"></div>
+                    <div class="yfg-img-frame">
+                        <img src="<?php echo esc_url( YFG_URI . '/assets/images/dedicated-remote-teams/dedicated-remote-teams-image-1.webp' ); ?>" alt="Dedicated Remote Teams">
+                    </div>
                 </div>
             </div>
         </div>
@@ -321,9 +363,9 @@ $yfg_contact_url = home_url( '/contact/?service=RemoteTeams' );
 <!-- ============ SECTION 4: WHY CHOOSE ============ -->
 <section class="yfg-section yfg-section--light">
     <div class="container">
-        <div class="row g-5">
+        <div class="row align-items-center g-5 mb-5">
             <!-- Left: Value Prop -->
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <span class="yfg-accent yfg-accent--start"></span>
                 <h2 class="yfg-section-title mb-4">Why Businesses Hire YFG as Their Remote Team</h2>
                 <ul class="yfg-list">
@@ -334,12 +376,24 @@ $yfg_contact_url = home_url( '/contact/?service=RemoteTeams' );
                     <li><strong>Global Experience:</strong> Aligned with international organizations in the UK, US, Germany, and Europe.</li>
                 </ul>
             </div>
-            <!-- Right: FAQs -->
-            <div class="col-lg-6" id="faq">
-                <span class="yfg-accent yfg-accent--start"></span>
-                <h2 class="yfg-section-title mb-4">Frequently Asked Questions</h2>
+            <!-- Right: Image -->
+            <div class="col-lg-5 text-center">
+                <div class="position-relative d-inline-block">
+                    <div class="yfg-deco-dots yfg-deco-dots--top-left"></div>
+                    <div class="yfg-deco-dots yfg-deco-dots--bottom-right"></div>
+                    <div class="yfg-img-frame">
+                        <img src="<?php echo esc_url( YFG_URI . '/assets/images/dedicated-remote-teams/dedicated-remote-teams-image-2.webp' ); ?>" alt="Why Hire YFG Remote Team">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 pt-4">
+            <div class="col-12" id="faq">
+                <span class="yfg-accent"></span>
+                <h2 class="yfg-section-title text-center mb-4">Frequently Asked Questions</h2>
                 
-                <div class="accordion yfg-faq" id="yfgFaq">
+                <div class="accordion yfg-faq mx-auto" id="yfgFaq" style="max-width: 800px;">
                     <?php
                     $faqs = array(
                         array( 'What is a dedicated remote team?', 'A dedicated remote team is a group of specialists you hire to work exclusively on your projects from a remote location, integrated into your tools and processes like in-house staff.' ),
@@ -372,10 +426,12 @@ $yfg_contact_url = home_url( '/contact/?service=RemoteTeams' );
 <!-- ============ SECTION 5: FINAL CTA ============ -->
 <section class="yfg-section text-center">
     <div class="container">
-        <h2 class="yfg-section-title mb-3">Ready to Hire Your Dedicated Remote Team?</h2>
-        <p class="text-muted mx-auto mb-4" style="max-width:700px;">Hire YFG as your dedicated remote team, aligned to your hours and ready to scale with your goals. Tell us what you need and we'll get started.</p>
-        <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-brand btn-lg">Hire Your Dedicated Team &rarr;</a>
-        <p class="mt-3 text-muted">Or visit <a class="text-teal font-semibold" href="<?php echo esc_url( home_url( '/' ) ); ?>">yourfirmgrowth.com</a> to request your free quote.</p>
+        <div class="yfg-action-banner text-center text-white" style="background: linear-gradient(135deg, #03182e 0%, #052f57 50%, #04505c 100%); border-radius: 24px; padding: 4rem 2rem; box-shadow: 0 15px 40px rgba(3, 24, 46, 0.15);">
+            <h2 class="h1 mb-3 text-white" style="font-weight: 800; color: #ffffff !important;">Ready to Hire Your Dedicated Remote Team?</h2>
+            <p class="mx-auto mb-4" style="max-width:700px; color: rgba(255, 255, 255, 0.9); font-size: 1.05rem;">Hire YFG as your dedicated remote team, aligned to your hours and ready to scale with your goals. Tell us what you need and we'll get started.</p>
+            <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-light btn-lg fw-semibold px-4 py-3" style="border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);">Hire Your Dedicated Team &rarr;</a>
+            <p class="mt-4 mb-0" style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Or visit <a class="text-white fw-semibold" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="text-decoration: underline;">yourfirmgrowth.com</a> to request your free quote.</p>
+        </div>
     </div>
 </section>
 

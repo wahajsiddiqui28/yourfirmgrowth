@@ -13,8 +13,8 @@ $yfg_contact_url = home_url( '/contact/?service=Marketing' );
 <style>
     /* Premium Page-Specific Styles */
     .yfg-landing-hero {
-        padding: 7rem 0 6rem;
-        background: linear-gradient(135deg, #03182e 0%, #052f57 50%, #04505c 100%);
+        padding: 8rem 0 7rem;
+        background: linear-gradient(135deg, rgba(3, 24, 46, 0.94) 0%, rgba(5, 47, 87, 0.9) 50%, rgba(4, 80, 92, 0.82) 100%), url(<?php echo esc_url( YFG_URI . '/assets/images/digital-marketing-services/digital-marketing-services-banner.webp' ); ?>) center / cover no-repeat;
         color: #ffffff;
         position: relative;
         overflow: hidden;
@@ -163,6 +163,50 @@ $yfg_contact_url = home_url( '/contact/?service=Marketing' );
         font-weight: 900;
         font-size: 1.1rem;
     }
+    /* Image Frame */
+    .yfg-img-frame {
+        position: relative;
+        display: inline-block;
+        padding: 12px;
+        background: #ffffff;
+        border: 1px solid #d9e8eb;
+        border-radius: 24px;
+        box-shadow: 0 15px 35px rgba(5, 47, 87, 0.05);
+        transition: all 0.4s ease;
+        z-index: 1;
+        width: 100%;
+    }
+    .yfg-img-frame:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 50px rgba(5, 47, 87, 0.1);
+        border-color: rgba(4, 112, 125, 0.3);
+    }
+    .yfg-img-frame img {
+        border-radius: 16px;
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+    .yfg-img-frame:hover img {
+        transform: scale(1.02);
+    }
+    .yfg-deco-dots {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        background-image: radial-gradient(var(--yfg-teal) 1.5px, transparent 1.5px);
+        background-size: 12px 12px;
+        opacity: 0.15;
+        z-index: 0;
+    }
+    .yfg-deco-dots--top-left {
+        top: -15px;
+        left: -15px;
+    }
+    .yfg-deco-dots--bottom-right {
+        bottom: -15px;
+        right: -15px;
+    }
     /* Process Cards */
     .yfg-process-card {
         background: #ffffff;
@@ -197,24 +241,6 @@ $yfg_contact_url = home_url( '/contact/?service=Marketing' );
         color: #5b6b7d;
         line-height: 1.5;
         margin-bottom: 0;
-    }
-    /* CTA Block */
-    .yfg-action-banner {
-        background: var(--yfg-grad);
-        color: #ffffff;
-        border-radius: 24px;
-        padding: 3.5rem;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 15px 40px rgba(4, 112, 125, 0.2);
-    }
-    .yfg-action-banner h2 {
-        color: #ffffff !important;
-        font-weight: 800;
-    }
-    .yfg-action-banner p {
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 700px;
     }
 </style>
 
@@ -252,15 +278,13 @@ $yfg_contact_url = home_url( '/contact/?service=Marketing' );
                 <p class="text-muted mb-4">We start with your goals and your numbers, not a template. Then we build a channel mix designed to attract the right audience, convert them efficiently, and keep them coming back, measuring everything so we can prove what's working and scale it.</p>
                 <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-outline-brand">Book a Strategy Call &rarr;</a>
             </div>
-            <div class="col-lg-6">
-                <div class="yfg-compliance-card p-4" style="border: 1px solid #d2ebee; background: linear-gradient(135deg, var(--yfg-soft) 0%, #ffffff 100%); border-radius: 20px;">
-                    <h3 class="h5 fw-bold mb-3" style="color:var(--yfg-navy);"><i class="bi bi-rocket-takeoff-fill me-2 text-teal"></i> Unifying Your Marketing Mix</h3>
-                    <ul class="yfg-list">
-                        <li><strong>Connected Strategy:</strong> Aligning all channels under one growth plan.</li>
-                        <li><strong>Zero Budget Waste:</strong> Making sure every dollar or pound compounds.</li>
-                        <li><strong>Data-Driven Execution:</strong> Tracking conversions, cost-per-lead, and ROAS.</li>
-                        <li><strong>Continuous Optimization:</strong> Constant A/B testing on ads and landing pages.</li>
-                    </ul>
+            <div class="col-lg-6 text-center">
+                <div class="position-relative d-inline-block">
+                    <div class="yfg-deco-dots yfg-deco-dots--top-left"></div>
+                    <div class="yfg-deco-dots yfg-deco-dots--bottom-right"></div>
+                    <div class="yfg-img-frame">
+                        <img src="<?php echo esc_url( YFG_URI . '/assets/images/digital-marketing-services/digital-marketing-services-image-1.webp' ); ?>" alt="Digital Marketing Strategy">
+                    </div>
                 </div>
             </div>
         </div>
@@ -378,9 +402,9 @@ $yfg_contact_url = home_url( '/contact/?service=Marketing' );
 <!-- ============ SECTION 3: AUDIENCE & DIFFERENTIATORS ============ -->
 <section class="yfg-section">
     <div class="container">
-        <div class="row g-5">
-            <!-- Left: Who it is for -->
-            <div class="col-lg-6">
+        <!-- Row 1: Who Our Digital Marketing Services Are For -->
+        <div class="row align-items-center g-5 mb-5 pb-4">
+            <div class="col-lg-7">
                 <span class="yfg-accent yfg-accent--start"></span>
                 <h2 class="yfg-section-title mb-4">Who Our Digital Marketing Services Are For</h2>
                 <ul class="yfg-list">
@@ -391,8 +415,29 @@ $yfg_contact_url = home_url( '/contact/?service=Marketing' );
                     <li><strong>International Organizations:</strong> Growing across the UK, US, Germany, Europe, and worldwide.</li>
                 </ul>
             </div>
-            <!-- Right: Differentiators -->
-            <div class="col-lg-6">
+            <div class="col-lg-5 text-center">
+                <div class="position-relative d-inline-block">
+                    <div class="yfg-deco-dots yfg-deco-dots--top-left"></div>
+                    <div class="yfg-deco-dots yfg-deco-dots--bottom-right"></div>
+                    <div class="yfg-img-frame">
+                        <img src="<?php echo esc_url( YFG_URI . '/assets/images/digital-marketing-services/digital-marketing-services-image-2.webp' ); ?>" alt="Digital Marketing Target Audience">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Why Businesses Choose YFG -->
+        <div class="row align-items-center g-5 pt-4">
+            <div class="col-lg-5 text-center order-lg-1 order-2">
+                <div class="position-relative d-inline-block">
+                    <div class="yfg-deco-dots yfg-deco-dots--top-left"></div>
+                    <div class="yfg-deco-dots yfg-deco-dots--bottom-right"></div>
+                    <div class="yfg-img-frame">
+                        <img src="<?php echo esc_url( YFG_URI . '/assets/images/digital-marketing-services/digital-marketing-services-image-3.webp' ); ?>" alt="Why Choose YFG">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 order-lg-2 order-1">
                 <span class="yfg-accent yfg-accent--start"></span>
                 <h2 class="yfg-section-title mb-4">Why Businesses Choose YFG</h2>
                 <ul class="yfg-list">
@@ -404,7 +449,8 @@ $yfg_contact_url = home_url( '/contact/?service=Marketing' );
                 </ul>
             </div>
         </div>
-        <div class="text-center mt-5">
+
+        <div class="text-center mt-5 pt-3">
             <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-brand btn-lg">Request Your Proposal &rarr;</a>
         </div>
     </div>
@@ -429,7 +475,7 @@ $yfg_contact_url = home_url( '/contact/?service=Marketing' );
             );
             foreach ( $steps as $step ) :
             ?>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 animate-card">
                 <div class="yfg-process-card">
                     <span class="yfg-process-badge"><?php echo esc_html( $step[0] ); ?></span>
                     <h3 class="yfg-process-title"><?php echo esc_html( $step[1] ); ?></h3>
@@ -444,10 +490,23 @@ $yfg_contact_url = home_url( '/contact/?service=Marketing' );
 <!-- ============ SECTION 5: SMALL BUSINESS ============ -->
 <section class="yfg-section">
     <div class="container">
-        <div class="yfg-action-banner text-center text-white">
-            <h2 class="h1 mb-3">Digital Marketing Services for Small Business</h2>
-            <p class="mx-auto mb-4">Growth shouldn't be reserved for big budgets. Our digital marketing services for small business focus on the highest-impact channels first (usually SEO and paid ads) so every penny works hard and results come quickly. As a flexible digital marketing services company, YFG scales your strategy as your revenue grows.</p>
-            <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-light btn-lg fw-semibold">Get a Custom Marketing Quote &rarr;</a>
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <span class="yfg-accent yfg-accent--start"></span>
+                <h2 class="yfg-section-title mb-3">Digital Marketing Services for Small Business</h2>
+                <p class="lead text-muted mb-4" style="font-size: 1.1rem; line-height: 1.6;">Growth shouldn't be reserved for big budgets. Our digital marketing services for small business focus on the highest-impact channels first (usually SEO and paid ads) so every penny works hard and results come quickly.</p>
+                <p class="text-muted mb-4">As a flexible digital marketing services company, YFG scales your strategy as your revenue grows, providing custom optimization pipelines and campaigns that fit your cashflow limits while delivering solid, compound returns.</p>
+                <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-brand btn-lg">Get a Custom Marketing Quote &rarr;</a>
+            </div>
+            <div class="col-lg-5 text-center">
+                <div class="position-relative d-inline-block">
+                    <div class="yfg-deco-dots yfg-deco-dots--top-left"></div>
+                    <div class="yfg-deco-dots yfg-deco-dots--bottom-right"></div>
+                    <div class="yfg-img-frame">
+                        <img src="<?php echo esc_url( YFG_URI . '/assets/images/digital-marketing-services/digital-marketing-services-image-4.webp' ); ?>" alt="Small Business Digital Marketing">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -493,10 +552,12 @@ $yfg_contact_url = home_url( '/contact/?service=Marketing' );
 <!-- ============ SECTION 7: FINAL CTA ============ -->
 <section class="yfg-section text-center">
     <div class="container">
-        <h2 class="yfg-section-title mb-3">Ready to Grow With a Digital Marketing Company?</h2>
-        <p class="text-muted mx-auto mb-4" style="max-width:700px;">Partner with YFG for digital marketing services that turn clicks into customers. Tell us your goals and we'll build the strategy to hit them.</p>
-        <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-brand btn-lg">Get Your Free Marketing Proposal &rarr;</a>
-        <p class="mt-3 text-muted">Or visit <a class="text-teal font-semibold" href="<?php echo esc_url( home_url( '/' ) ); ?>">yourfirmgrowth.com</a> to request your free quote.</p>
+        <div class="yfg-action-banner text-center text-white" style="background: linear-gradient(135deg, #03182e 0%, #052f57 50%, #04505c 100%); border-radius: 24px; padding: 4rem 2rem; box-shadow: 0 15px 40px rgba(3, 24, 46, 0.15);">
+            <h2 class="h1 mb-3 text-white" style="font-weight: 800; color: #ffffff !important;">Ready to Grow With a Digital Marketing Company?</h2>
+            <p class="mx-auto mb-4" style="max-width:700px; color: rgba(255, 255, 255, 0.9); font-size: 1.05rem;">Partner with YFG for digital marketing services that turn clicks into customers. Tell us your goals and we'll build the strategy to hit them.</p>
+            <a href="<?php echo esc_url( $yfg_contact_url ); ?>" class="btn btn-light btn-lg fw-semibold px-4 py-3" style="border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);">Get Your Free Marketing Proposal &rarr;</a>
+            <p class="mt-4 mb-0" style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">Or visit <a class="text-white fw-semibold" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="text-decoration: underline;">yourfirmgrowth.com</a> to request your free quote.</p>
+        </div>
     </div>
 </section>
 
