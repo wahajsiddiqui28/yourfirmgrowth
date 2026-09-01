@@ -4,4 +4,7 @@ wp-content/uploads/
 wp-content/cache/
 wp-content/upgrade/
 wp-content/backup*/
+wp-content/wflogs/
+wp-content/wfcache/
+wp-content/wp-cache-config.php
 *.log
