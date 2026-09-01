@@ -11,6 +11,7 @@ $yfg_img = YFG_URI . '/assets/images';
 ?>
 
 <!-- ============ HERO ============ -->
+ <!-- This is Css -->
 <style>
 	.yfg-hero {
 		background: linear-gradient(135deg, rgba(3, 24, 46, 0.95) 0%, rgba(5, 47, 87, 0.9) 50%, rgba(4, 75, 87, 0.82) 100%), url(<?php echo esc_url( $yfg_img . '/home-page/home-page-banner.webp' ); ?>) center / cover no-repeat;
