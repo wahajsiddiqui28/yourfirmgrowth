@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ============================================================
+   Custom Reviews Widget — Trustindex "Slider I" look-alike
+   Stars: Trustindex/Custom = green, Google = gold (mask + bg)
+   ============================================================ */
+
+.crw-widget {
+	--crw-green: #2fb344;   /* Trustindex-style star green */
+	--crw-gold:  #f6bb06;   /* Google-style star gold */
+	--crw-text:  #000000;
+	--crw-muted: #6b6b6b;
+	--crw-card-bg: #f4f4f4;
+	max-width: 1120px;
+	margin: 0 auto;
+	padding: 10px 0 20px;
+	font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	color: var(--crw-text);
+	text-align: left;
+}
+.crw-widget *, .crw-widget *::before, .crw-widget *::after { box-sizing: border-box; }
+
+/* ---- Stars (real Trustindex/Google SVGs, per source) ---- */
+.crw-star-img {
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+	margin-right: 1px;
+	vertical-align: middle;
+	flex-shrink: 0;
+}
+
+/* ---- Header (overall rating) ---- */
+.crw-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin-bottom: 18px;
+	font-size: 15px;
+}
+.crw-header-rating { font-weight: 600; }
+.crw-header-stars { display: inline-flex; align-items: center; }
+.crw-header-stars .crw-star-img { width: 18px; height: 18px; }
+.crw-header-count { color: var(--crw-muted); }
+
+/* ---- Slider container + arrows ---- */
+.crw-container { display: flex; align-items: center; gap: 6px; position: relative; }
+.crw-track-wrapper { overflow: hidden; flex: 1; padding-top: 5px; }
+.crw-track { display: flex; gap: 16px; transition: transform 0.35s ease; }
+
+.crw-arrow {
+	flex-shrink: 0;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: none;
+	background: #fff;
+	outline: 2px solid #f4f4f4;
+	color: #575757;
+	cursor: pointer;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.15s, color 0.15s, outline-color 0.15s;
+}
+.crw-arrow:hover { background: #4d4d4d; color: #fff; outline-color: #424242; }
+.crw-arrow:disabled { opacity: 0.3; cursor: default; }
+.crw-arrow:disabled:hover { background: #fff; color: #575757; outline-color: #f4f4f4; }
+
+/* ---- Card ---- */
+.crw-card { flex: 0 0 calc(33.333% - 11px); min-width: 260px; }
+@media (max-width: 900px) { .crw-card { flex: 0 0 calc(50% - 8px); } }
+@media (max-width: 600px) { .crw-card { flex: 0 0 100%; } }
+
+.crw-card-inner {
+	background: var(--crw-card-bg);
+	border-radius: 12px;
+	padding: 20px;
+	height: 100%;
+	position: relative;
+	transition: transform 0.2s ease;
+}
+@media (min-width: 480px) {
+	.crw-card:hover .crw-card-inner { transform: translateY(-5px); }
+}
+
+/* Platform icon — top-right corner of the card */
+.crw-platform-icon { position: absolute; top: 18px; right: 18px; width: 20px; height: 20px; z-index: 2; }
+.crw-platform-icon img { width: 20px; height: 20px; display: block; }
+
+/* Header row: avatar + name/date */
+.crw-card-header { display: flex; align-items: center; }
+.crw-avatar-wrap { flex-shrink: 0; margin-right: 15px; }
+.crw-avatar, .crw-avatar-letter {
+	width: 40px; height: 40px; border-radius: 50%; display: block; object-fit: cover; object-position: top;
+}
+.crw-avatar-letter {
+	display: flex; align-items: center; justify-content: center;
+	background: #e2e2e2; color: #555; font-weight: 600; font-size: 15px;
+}
+.crw-name-block { flex: 1; min-width: 0; }
+.crw-name {
+	font-weight: 600; font-size: 15px; color: var(--crw-text);
+	white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 25px;
+}
+.crw-date { color: var(--crw-muted); font-size: 13px; }
+
+/* Stars row + verified tick */
+.crw-stars-row { display: flex; align-items: center; margin: 11px 0; }
+.crw-verified { width: 15px; height: 15px; margin-left: 7px; display: inline-block; }
+.crw-verified img { width: 100%; height: 100%; display: block; }
+
+/* Review text (4-line clamp like Trustindex) */
+.crw-text p {
+	margin: 0;
+	font-size: 15px;
+	line-height: 21.75px;
+	color: #000000;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	height: 87px;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+.crw-text p strong { font-weight: 600; }
+
+.crw-read-more { display: block; margin-top: 6px; }
+.crw-read-more span { font-size: 13.5px; color: #000000; opacity: 0.5; cursor: pointer; transition: color 0.3s; }
+.crw-read-more span:hover { opacity: 1; text-decoration: underline; }
+
+/* Dots */
+.crw-dots { display: flex; justify-content: center; gap: 6px; margin-top: 18px; }
+.crw-dot { width: 6px; height: 6px; border-radius: 50%; background: #ddd; cursor: pointer; transition: background 0.2s; }
+.crw-dot.active { background: var(--crw-green); }
+
+/* ---- "See all reviews" button ---- */
+.crw-more-wrap { display: flex; justify-content: center; margin-top: 22px; }
+.crw-more-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: #1a976a;
+	color: #fff !important;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none !important;
+	padding: 11px 22px;
+	border-radius: 999px;
+	transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+	box-shadow: 0 6px 16px rgba(26, 151, 106, 0.25);
+}
+.crw-more-btn:hover { background: #157a56; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(26, 151, 106, 0.32); color: #fff !important; }
+.crw-more-arrow { transition: transform 0.15s ease; }
+.crw-more-btn:hover .crw-more-arrow { transform: translateX(3px); }
+
+/* ---- Source tabs (All / Google / Trustindex) ---- */
+.crw-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 18px; }
+.crw-tab { display: inline-flex; align-items: center; gap: 7px; background: #fff; border: 1px solid #e2e2e2; color: #333; font-family: inherit; font-size: 14px; font-weight: 600; padding: 8px 16px; border-radius: 999px; cursor: pointer; transition: background .15s ease, border-color .15s ease, color .15s ease; }
+.crw-tab img { width: 16px; height: 16px; display: block; }
+.crw-tab:hover { border-color: #1a976a; color: #1a976a; }
+.crw-tab.is-active { background: #1a976a; border-color: #1a976a; color: #fff; }
+.crw-tab-count { font-size: 12px; font-weight: 600; opacity: .7; }
+.crw-tab.is-active .crw-tab-count { opacity: .95; }
+
+/* ---- Grid layout (dedicated reviews page — sab cards ek saath) ---- */
+.crw-widget--grid { max-width: 1160px; }
+.crw-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+.crw-grid .crw-card { min-width: 0; }
+@media (max-width: 900px) { .crw-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .crw-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   Read-more lightbox
+   ============================================================ */
+.crw-lightbox-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.6);
+	z-index: 999999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	font-family: 'Poppins', sans-serif;
+}
+.crw-lightbox-overlay.crw-hidden { display: none; }
+.crw-lightbox-box {
+	background: #fff;
+	border-radius: 12px;
+	max-width: 520px;
+	width: 100%;
+	max-height: 80vh;
+	overflow-y: auto;
+	padding: 24px;
+	position: relative;
+}
+.crw-lightbox-close {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: #f4f4f4;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 1;
+}
+.crw-lightbox-content .crw-platform-icon { top: 0; right: 0; }
+.crw-lightbox-content .crw-card-header { margin-bottom: 8px; }
+.crw-lightbox-content .crw-stars-row { margin: 11px 0; }
+.crw-lightbox-content .crw-text p {
+	-webkit-line-clamp: unset;
+	height: auto;
+	overflow: visible;
+	display: block;
+}

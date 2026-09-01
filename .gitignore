@@ -1,0 +1,7 @@
+wp-config.php
+.htaccess
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup*/
+*.log

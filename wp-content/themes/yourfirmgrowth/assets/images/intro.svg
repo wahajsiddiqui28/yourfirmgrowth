@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" role="img" aria-label="One connected digital strategy">
+  <defs>
+    <linearGradient id="gi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#052f57"/>
+      <stop offset="1" stop-color="#04707d"/>
+    </linearGradient>
+  </defs>
+  <circle cx="280" cy="220" r="70" fill="url(#gi)"/>
+  <text x="280" y="232" text-anchor="middle" font-family="Inter, sans-serif" font-size="34" font-weight="700" fill="#ffffff">YFG</text>
+  <g>
+    <g transform="translate(110,90)"><rect width="96" height="70" rx="14" fill="#ffffff" stroke="#e2e8f0"/><circle cx="48" cy="35" r="18" fill="#04707d"/></g>
+    <g transform="translate(360,90)"><rect width="96" height="70" rx="14" fill="#ffffff" stroke="#e2e8f0"/><circle cx="48" cy="35" r="18" fill="#052f57"/></g>
+    <g transform="translate(90,280)"><rect width="96" height="70" rx="14" fill="#ffffff" stroke="#e2e8f0"/><circle cx="48" cy="35" r="18" fill="#0aa3b0"/></g>
+    <g transform="translate(380,280)"><rect width="96" height="70" rx="14" fill="#ffffff" stroke="#e2e8f0"/><circle cx="48" cy="35" r="18" fill="#04707d"/></g>
+  </g>
+  <g stroke="#04707d" stroke-width="3" stroke-dasharray="6 7" opacity=".6" fill="none">
+    <path d="M210 220 L206 125"/><path d="M350 220 L360 125"/>
+    <path d="M210 230 L186 315"/><path d="M350 230 L380 315"/>
+  </g>
+</svg>

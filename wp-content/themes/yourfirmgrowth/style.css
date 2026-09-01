@@ -1,0 +1,18 @@
+/*
+Theme Name: YourFirmGrowth
+Theme URI: https://yourfirmgrowth.com/
+Author: YourFirmGrowth Team
+Author URI: https://yourfirmgrowth.com/
+Description: A modern, fast and SEO-friendly business theme built for firms, agencies and growth-focused companies. Includes a custom homepage, services, blog and contact sections.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: yourfirmgrowth
+Tags: business, agency, seo, blog, custom-menu, featured-images, custom-logo, responsive
+*/
+
+/* All visual styles live in assets/css/main.css (enqueued from functions.php).
+   This file only carries the required theme header above. */
