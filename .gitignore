@@ -7,4 +7,7 @@ wp-content/backup*/
 wp-content/wflogs/
 wp-content/wfcache/
 wp-content/wp-cache-config.php
+node_modules/
+.vscode/
+Thumbs.db
 *.log
